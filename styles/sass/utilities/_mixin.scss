@@ -1,0 +1,56 @@
+$breakpoints: (
+        xs: 320px,
+        sm: 480px,
+        md:780px,
+        lg:990px,
+        xl: 1280px
+);
+
+@mixin break($size){
+  @media (min-width: map-get($breakpoints,$size)){
+    @content
+  }
+}
+
+.text{
+  @include break(1440px){
+    font-size: 25px;
+  }
+  @include break(989px){
+    font-size: 16px;
+  }
+}
+
+.col {
+  &-sm {
+    width:320px;
+  }
+}
+
+//@mixin grid-col{
+//  @each $key, $value in $breakpoints{
+//    @for $i from 1 through $items{
+//      //@if($key = 'sm'){
+//      //  &-#{key}{
+//      //    width: $value;
+//      //  }
+//      //}@else{
+//      //  &-#{key}-testing{
+//      //    width: $value;
+//      //  }
+//      //}
+//
+//    }
+//  }
+//}
+.col{
+  //@include grid-col;
+}
+
+.col-sm{
+
+}
+
+.col-lg-testing{
+
+}
